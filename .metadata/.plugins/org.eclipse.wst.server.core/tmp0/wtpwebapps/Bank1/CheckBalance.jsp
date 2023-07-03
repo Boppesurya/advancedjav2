@@ -1,0 +1,62 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+table {
+	border:1px solid black;
+
+	padding:10px;
+	margin:10px;
+}
+</style>
+</head>
+<body>
+<center>
+<form action="CheckBalance.jsp">
+<input type="number" name="mb" placeholder="Enter Your Mobaile">
+<br><br>
+<input type="password"  name="pass"placeholder="Enter your Password">
+<br><br>
+<input type="submit">
+</form>
+</center>
+
+
+<%
+   String mb = request.getParameter("mb");
+   String pass = request.getParameter("pass");
+	String select ="select * from bank where mobailnumber=? and password=?";
+	String url ="jdbc:mysql://localhost:3306/teca41?user=root&password=12345";
+	try{
+		Class.forName("com.mysql.jdbc.Driver");
+ Connection con	= DriverManager.getConnection(url);
+  PreparedStatement ps = con.prepareStatement(select);
+  ps.setString(1, mb);
+  ps.setString(2, pass);
+  ResultSet rs = ps.executeQuery();
+  if(rs.next()){
+	  out.println("<center><table><tr><th>Id</th><th>Name</th><th>Amounte</th></tr>");
+	  out.println("<tr><td>"+rs.getInt(1)+"</td><td>"+rs.getString(2)+"</td><td>"+rs.getDouble(4)+"</td></tr>");
+	  
+  }
+  else{
+	  out.println("In-Valied Information");
+  }
+	}
+	catch(Exception e){
+		e.printStackTrace();
+		
+	}
+%>
+
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;sqlonnection&apos; to &apos;sqlConnection&apos;&#x0D;&#x0A;- Original project: &apos;sql_connection&apos;&#x0D;&#x0A;- Original element: &apos;sql_connection/src/sqlonnection&apos;&#x0D;&#x0A;- Renamed element: &apos;sql_connection/src/sqlConnection&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;sqlonnection&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;sqlonnection" name="sqlConnection" qualified="false" references="true" stamp="1684140618459" textual="false" version="1.0"/>
+</session>

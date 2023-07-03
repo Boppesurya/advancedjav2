@@ -1,0 +1,8 @@
+package com.jsp.telugu;
+
+import org.eclipse.jdt.internal.compiler.batch.Main;
+
+public class User {
+	TeluguMatrimony teluguMatrimony;
+   
+}

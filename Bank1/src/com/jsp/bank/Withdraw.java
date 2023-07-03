@@ -1,0 +1,66 @@
+package com.jsp.bank;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Random;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+@WebServlet("/Withdraw")
+public class Withdraw extends HttpServlet{
+@Override
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+      String mb = req.getParameter("number");
+      String pass = req.getParameter("password");
+       HttpSession session = req.getSession();
+       PrintWriter write = resp.getWriter();
+   	resp.setContentType("text/html");
+       String url="jdbc:mysql://localhost:3306/teca41?user=root&password=12345";
+       String select ="select * from bank where mobailnumber=? and password=?";
+       try {
+    	   Class.forName("com.mysql.jdbc.Driver");
+	 Connection conn= DriverManager.getConnection(url);
+	 PreparedStatement ps = conn.prepareStatement(select);
+		ps.setString(1, mb);
+		ps.setString(2, pass);
+		ResultSet rs = ps.executeQuery();
+		
+		if(rs.next()) {
+			session.setAttribute("mb", mb);
+			session.setAttribute("pass", pass);
+			session.setMaxInactiveInterval(15);
+			Random r = new Random();
+			int otp = r.nextInt(10000);
+			if (otp<1000) {
+				otp+=1000;
+			}
+			double damounte = rs.getDouble("amount");
+			session.setAttribute("mb", mb);
+			session.setAttribute("pass", pass);
+			session.setAttribute("damounte", damounte);
+			session.setAttribute("otp", otp);
+			session.setMaxInactiveInterval(15);
+			write.println("<center><h1>"+otp+"</h1></center>");
+    		RequestDispatcher rd = req.getRequestDispatcher("Otp2.html");
+	    	rd.include(req, resp);
+		}
+		else {
+			RequestDispatcher rd = req.getRequestDispatcher("Debit.html");
+			rd.include(req, resp);
+		}
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
+}

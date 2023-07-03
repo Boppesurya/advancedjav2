@@ -1,0 +1,31 @@
+package connection_Sql1;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class EstablishingConnection {
+public static void main(String[] args) {
+	String url = "jdbc:mysql://localhost:3306?user=root&password=12345";
+	String insert="insert int teca41.employee values(107,'Raju',55000,10)";
+	try {
+		Connection connection= DriverManager.getConnection(url);
+		System.out.println("connection established");
+	    Statement st=connection.createStatement();
+	    System.out.println("platform created");
+	   int num = st.executeUpdate(insert);
+	if (num!=1) {
+		System.out.println(num);
+		System.out.println("Data Inserted");
+	}
+	else {
+		System.out.println("Data Not Inserted");
+	}
+	
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
+}

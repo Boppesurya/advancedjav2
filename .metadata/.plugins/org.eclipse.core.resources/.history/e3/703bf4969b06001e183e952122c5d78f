@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+#form{
+font-size:20px;
+         border:2px solid black;
+         width: 600px;
+         padding: 20px;
+         background-color:gray;
+         color: white;
+}
+.in{
+text-align: center;
+        font-size: 20px;
+        border-radius:10px;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align: center;">Mobile-Transaction</h1>
+<center>
+<form action="" id="form" method="post">
+<table>
+<tr>
+<td>Enter Mobile Number</td>
+<td>:</td>
+<td><input type="number" name="number" placeholder="Enter Number" class="in"></td>
+</tr>
+<tr>
+<td>Enter Password</td>
+<td>:</td>
+<td><input placeholder="Enter password" name="password" class="in" type="password"></td>
+</tr>
+<tr>
+<td> 
+<input type="submit" style="font-size:25px;text-align:center;border-radius:10px;" value="Log-In">
+</td>
+</tr>
+</table>
+</form>
+</center>
+</body>
+</html>

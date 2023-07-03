@@ -1,0 +1,8 @@
+127.0.0.1 - - [09/Jun/2023:13:27:54 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [09/Jun/2023:13:27:56 +0530] "GET /Bank1/MobaileTransaction.html HTTP/1.1" 200 961
+0:0:0:0:0:0:0:1 - - [09/Jun/2023:13:27:57 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [09/Jun/2023:13:28:07 +0530] "POST /Bank1/MobaileTransaction.html HTTP/1.1" 200 961
+0:0:0:0:0:0:0:1 - - [09/Jun/2023:13:28:14 +0530] "POST /Bank1/MobaileTransaction.html HTTP/1.1" 200 961
+127.0.0.1 - - [09/Jun/2023:13:31:22 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [09/Jun/2023:13:31:22 +0530] "GET /Bank1/MobaileTransaction.html HTTP/1.1" 200 987
+0:0:0:0:0:0:0:1 - - [09/Jun/2023:13:31:33 +0530] "POST /Bank1/MobailTransaction HTTP/1.1" 404 769

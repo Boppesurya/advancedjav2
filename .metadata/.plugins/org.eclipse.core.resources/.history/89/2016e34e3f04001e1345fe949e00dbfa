@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+<h1>Otp</h1> 
+<form action="">
+<label>Enter Otp</label>
+ <input name="otp" placeholder="Enter your OTP">
+ <br><br>
+ <input type="submit">
+</form>
+</center>
+
+</body>
+</html>

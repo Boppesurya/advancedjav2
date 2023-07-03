@@ -1,0 +1,30 @@
+package com.jsp.bank;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class CreaditAmounte  extends HttpServlet{
+ @Override
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	String tamounte = req.getParameter("Amounte");
+	double amounte  = Double.parseDouble(tamounte);
+	PrintWriter writer = resp.getWriter();
+		resp.setContentType("text/html");
+		HttpSession session = req.getSession();
+		Double damounte =(Double) session.getAttribute("damounte");
+		String mb = (String) session.getAttribute("mb");
+	 String pass = (String)session.getAttribute("pass");
+	 if (amounte>0) {
+		double add = damounte + amounte;
+		
+	} else {
+
+	}
+}
+}

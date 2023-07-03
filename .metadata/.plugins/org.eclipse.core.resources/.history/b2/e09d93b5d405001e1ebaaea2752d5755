@@ -1,0 +1,19 @@
+package com.jsp.telugu;
+
+
+
+public class User {
+	TeluguMatrimony teluguMatrimony;
+public static void main(String[] args) {
+	Docter dott = new Docter();
+	System.out.println(dott);
+	dott.age();
+	dott.name();
+	dott.stream();
+	Engineer eng = new Engineer()
+			eng.age();
+	        eng.name();
+	        eng.stream();
+}
+   
+}
